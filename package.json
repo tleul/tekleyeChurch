@@ -1,0 +1,16 @@
+{
+  "name": "tekleyechurchproject",
+  "version": "1.0.0",
+  "description": "Church members managment System ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leul Tekleselassie",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "mongoose": "^5.9.10"
+  }
+}
