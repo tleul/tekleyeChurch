@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import API from '../../api';
 import StripeCheckout from 'react-stripe-checkout';
 import { Button } from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
+
 const CheckoutPayment = ({ total, history, name }) => {
 	const makepayment = async (token) => {
 		try {

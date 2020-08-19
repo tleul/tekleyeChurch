@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+
 import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
+
 const NavbarComponent = () => {
 	return (
 		<Fragment>

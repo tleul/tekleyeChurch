@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { getmembers } from '../../actions/getmembers';
-import Button from 'react-bootstrap/button';
-import StripeCheckout from 'react-stripe-checkout';
+
 import Spinner from './Spinner';
 import CheckoutPayment from './StripePyamnet';
 export default function AutocompleteComponent() {
