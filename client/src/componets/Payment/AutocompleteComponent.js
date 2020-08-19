@@ -6,6 +6,7 @@ import { getmembers } from '../../actions/getmembers';
 import Button from 'react-bootstrap/button';
 import StripeCheckout from 'react-stripe-checkout';
 import Spinner from './Spinner';
+import CheckoutPayment from './StripePyamnet';
 export default function AutocompleteComponent() {
 	const [input, setInput] = useState('');
 
@@ -66,7 +67,7 @@ export default function AutocompleteComponent() {
 						''
 					)}
 
-					<Button onClick={() => onClick()}>Pay Now</Button>
+					<CheckoutPayment name={input} />
 				</div>
 			) : (
 				<Spinner />
