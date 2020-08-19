@@ -1,16 +1,21 @@
 {
-  "name": "tekleyechurchproject",
-  "version": "1.0.0",
-  "description": "Church members managment System ",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Leul Tekleselassie",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-validator": "^6.4.0",
-    "mongoose": "^5.9.10"
-  }
+	"name": "tekleyechurchproject",
+	"version": "1.0.0",
+	"description": "Church members managment System ",
+	"main": "index.js",
+	"scripts": {
+		"server": "nodemon server.js",
+		"client": "npm start --prefix client",
+		"dev": "concurrently -n 'server,client' -c 'green,yellow' \"npm run server\" \"npm run client\" "
+	},
+	"author": "Leul Tekleselassie",
+	"license": "MIT",
+	"dependencies": {
+		"concurrently": "^5.3.0",
+		"express": "^4.17.1",
+		"express-validator": "^6.4.0",
+		"mongoose": "^5.9.10",
+		"nodemon": "^2.0.4",
+		"uuid": "^8.3.0"
+	}
 }
