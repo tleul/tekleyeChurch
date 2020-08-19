@@ -9,7 +9,6 @@ const PaymentProcess = () => {
 				Us
 			</p>
 			<AutocompleteComponent />
-			<Button>Pay Now</Button>
 		</div>
 	);
 };
