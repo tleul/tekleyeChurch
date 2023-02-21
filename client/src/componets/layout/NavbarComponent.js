@@ -9,7 +9,7 @@ const NavbarComponent = () => {
 			{' '}
 			<>
 				<Navbar bg='light' expand='lg'>
-					<Navbar.Brand href='#home'>
+					<Navbar.Brand href='/'>
 						{' '}
 						Teklehaymanotie Church{' '}
 					</Navbar.Brand>

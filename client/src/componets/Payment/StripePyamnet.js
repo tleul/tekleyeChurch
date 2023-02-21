@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-
-import API from '../../api/api';
+import { withRouter } from 'react-router-dom';
+import API from '../../api';
 import StripeCheckout from 'react-stripe-checkout';
 import { Button } from '@material-ui/core';
-
-const CheckoutPayment = ({ total, cart, history }) => {
+import TextField from '@material-ui/core/TextField';
+const CheckoutPayment = ({ total, history, name }) => {
 	const makepayment = async (token) => {
 		try {
 			const body = {
 				token,
-				cart,
-				total,
+				name,
 			};
 			const response = await API.post('/payment', body);
 			if (response.status == 200) {
@@ -18,7 +17,7 @@ const CheckoutPayment = ({ total, cart, history }) => {
 				console.log(response.data.receipt_url);
 				history.push('/paymentsuccess', {
 					receipt_url: response.data.receipt_url,
-					address: response.data.billing_details,
+					username: name,
 				});
 				console.log(response.data);
 			}
@@ -32,14 +31,22 @@ const CheckoutPayment = ({ total, cart, history }) => {
 			<StripeCheckout
 				token={makepayment}
 				stripeKey={process.env.REACT_APP_STRIPEPK}
-				amount={total * 100}
-				shippingAddress
+				amount={25 * 100}
 				billingAddress>
-				<Button variant='contained' color='primary' component='span'>
-					PAY {total}&nbsp;
+				{''}
+				<i style={{ textJustify: 'center' }}>
+					You will be charged monthly fee of 25$ click pay to proceed
+				</i>
+				<br />
+				<Button
+					disabled={!name}
+					variant='contained'
+					color='primary'
+					component='span'>
+					PAY 25$&nbsp;
 				</Button>
 			</StripeCheckout>
 		</>
 	);
 };
-export default CheckoutPayment;
+export default withRouter(CheckoutPayment);
